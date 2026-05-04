@@ -105,9 +105,9 @@ When a player has 🌿×3 and is on open island ground, **short-press B** to ope
 - If the selected option is at max level (Lv 3), a warning plays and seaweed is not consumed.
 
 ### Pond production
-- **Lv1** — one fish every **11 s** (if not at capacity)
-- **Lv2** — one fish every **9 s**
-- **Lv3** — one fish every **6 s**
+- **Lv1** — one fish every **9 s** (if not at capacity)
+- **Lv2** — one fish every **7 s**
+- **Lv3** — one fish every **4 s**
 
 ### Pond Label
 Each pond shows a small tag above it: **[fish icon] · LvX** and a line with **SSR** chance (e.g. `5% SSR` at Lv1). The owner is identified by a coloured triangular flag to the right of the pond.
