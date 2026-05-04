@@ -1,7 +1,7 @@
 # Tidekeeper — Game Rules
 
 > This document is the authoritative source for game rules and controls.  
-> When rules are updated here, update the code in `ocean_game.html` accordingly.
+> When rules are updated here, update the code in `index.html` accordingly.
 
 ---
 
