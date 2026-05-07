@@ -5,15 +5,14 @@
 **Course Project:** DESIGN 6197/4197 - Designing Games for Research (Spring 2026, Cornell Tech)  
 **Team Members:** Mengting Bao (mb2755), Yifei Tao (yt684), Ruowen Lou (rl948), Yusen Guo (yg684)
 
-**Game link:** [https://momoko0719.itch.io/tidekeeper](https://momoko0719.itch.io/tidekeeper)  
-**Game Trailer Video:** [https://www.youtube.com/watch?v=wgr85uj6pvE](https://www.youtube.com/watch?v=wgr85uj6pvE)
-**Game Presentation Slide link:** [https://docs.google.com/presentation/d/1j_P_3pW9UUqyDZNS6VzoZ-HNN89paVZe8ksb7NAqBsY/edit?usp=sharing](https://docs.google.com/presentation/d/1j_P_3pW9UUqyDZNS6VzoZ-HNN89paVZe8ksb7NAqBsY/edit?usp=sharing)
+- **Game link:** [https://momoko0719.itch.io/tidekeeper](https://momoko0719.itch.io/tidekeeper)  
+- **Game Trailer Video:** [https://www.youtube.com/watch?v=wgr85uj6pvE](https://www.youtube.com/watch?v=wgr85uj6pvE)
+- **Game Presentation Slide:** [https://docs.google.com/presentation/d/1j_P_3pW9UUqyDZNS6VzoZ-HNN89paVZe8ksb7NAqBsY/edit?usp=sharing](https://docs.google.com/presentation/d/1j_P_3pW9UUqyDZNS6VzoZ-HNN89paVZe8ksb7NAqBsY/edit?usp=sharing)
+
 
 ![Tidekeeper Banner](gamePictures/banner.png)
 
-Tidekeeper is a multiplayer game where four coastal creatures compete and interact within a shared ecosystem while racing to earn the most money.  
-Through actions like stealing, selling, cooking, and releasing fish, players reveal dynamic strategies that shape both competition and environmental outcomes.  
-Each round mixes cooperation and conflict, then uses a group vote to adjust how often police appear in the next round.
+Tidekeeper is a multiplayer game where four coastal creatures compete and interact within a shared ecosystem while racing to earn the most money.  Through actions like stealing, selling, cooking, and releasing fish, players reveal dynamic strategies that shape both competition and environmental outcomes. Each round mixes cooperation and conflict, then uses a group vote to adjust how often police appear in the next round.
 
 ## Repository Overview
 
