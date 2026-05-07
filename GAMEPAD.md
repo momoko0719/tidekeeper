@@ -1,46 +1,63 @@
-# Ocean Guardian — 手柄与输入说明
+# Ocean Guardian - Gamepad Input Guide
 
-游戏使用浏览器 **Gamepad API**。**键盘仍然可用**，与手柄并行（同一玩家位输入会合并）。
+The game uses the browser **Gamepad API**.
+**Keyboard and gamepad input both stay enabled** and are merged per player slot.
 
-## 玩家与手柄顺序
+## Player Slot to Gamepad Index
 
-| 玩家 | 手柄 | 说明 |
+| Player | Gamepad Index | Notes |
 |------|------|------|
-| P1 | 第 1 个被系统识别的手柄（索引 `0`） | 建议先插 P1 的手柄 |
-| P2 | 索引 `1` | 第二个连接的手柄 |
-| P3 | 索引 `2` | 第三个 |
-| P4 | 索引 `3` | 第四个 |
+| P1 | First detected pad (`0`) | Connect P1 first if possible |
+| P2 | `1` | Second connected pad |
+| P3 | `2` | Third connected pad |
+| P4 | `3` | Fourth connected pad |
 
-顺序由操作系统 / 浏览器决定。若错位，拔掉后按 **P1 → P4** 期望顺序重新连接。
+Detection order comes from the OS/browser. If players are mismatched, reconnect pads in your intended **P1 -> P4** order.
 
-## 手柄键位（Standard Gamepad）
+## Standard Gamepad Mapping
 
-与网页内 **Controls (gamepad)** 一致。
+Current config in `index.html`:
+- `GP_DEADZONE = 0.22`
+- `GP_BTN_ACT = 0` (A / Cross)
+- `GP_BTN_GRD = 1` (B / Circle)
+- `GP_BTN_ALT = 2` (X / Square)
+- `GP_BTN_NEXT = 3` (Y / Triangle)
 
-| 输入 | 功能 |
+| Input | In-game behavior |
 |------|------|
-| **左摇杆 (LS)** | 移动（带死区） |
-| **十字键 (D-Pad)** | 移动；与摇杆同时可用时，与键盘一起参与合成后**限速** |
-| **按钮 0** — Xbox **A** / PS **×** / Switch 右下 | **Action**（采集、建造、卖鱼、偷鱼、SSR 连打等） |
-| **按钮 1** — Xbox **B** / PS **○** / Switch 右 | **Guard**（防守切换；在海上持鱼时等同放生） |
+| **Left Stick (LS)** | Move (radial deadzone applied) |
+| **D-Pad** | Move (combined with stick/keyboard, then speed-limited) |
+| **Button 0 (A / Cross)** | Primary action: gather seaweed, interact with pond, sell/cook confirm, steal attempt, SSR mash, vote "More", menu continue/start |
+| **Button 1 (B / Circle)** | Guard/utility: tap on island to open/cancel build menu, hold on island (>= 0.25s) to activate guard, tap in ocean while holding fish to release, vote "Less" |
+| **Button 2 (X / Square)** | Vote "Same" during verdict screen |
+| **Button 3 (Y / Triangle)** | "Next Round" confirm after all votes are submitted |
 
-Action / Guard 为**按下边沿触发**（与键盘单次按下一致），避免长按连发。
+Action buttons are edge-triggered (press transition), which prevents auto-repeat from long holds.
 
-### SSR 抢鱼小游戏
+## Guard and Build Timing Rules
 
-两名玩家**连按 A（按钮 0）**。若进入时已按住 A，请先**松开再按**，否则会沿用进入前的“已按下”状态。
+- **Island tap B** (`< 0.25s`): open build/upgrade menu.
+- **Island hold B** (`>= 0.25s`): enable guard mode.
+- Releasing B after a long hold disables guard and starts cooldown.
+- Guard can also expire automatically (then cooldown starts).
+- If guard cooldown is active, pressing B on island shows cooldown feedback.
 
-## 键盘对照（未改）
+## SSR Fish Clash
 
-| 玩家 | 移动 | Act | Grd |
+During SSR clash, only the two involved players can score by mashing **A (Button 0)**.
+If A was already held before entering clash, players must release and press again to register new taps.
+
+## Keyboard Reference (Unchanged)
+
+| Player | Move | Act | Grd |
 |------|------|-----|-----|
 | P1 | WASD | E | Q |
-| P2 | 方向键 | / | . |
+| P2 | Arrow keys | / | . |
 | P3 | T F G H | Y | R |
 | P4 | I J K L | O | U |
 
-## 环境与调试
+## Browser and Debug Notes
 
-- 使用 Chrome、Edge、Firefox 等现代浏览器。
-- 点击游戏页面让窗口获得焦点后再用手柄。
-- 若 A/B 与游戏内不符，可在 `index.html` 中修改 `GP_BTN_ACT`、`GP_BTN_GRD` 或死区 `GP_DEADZONE`。
+- Use a modern browser (Chrome, Edge, Firefox).
+- Click the game once so the page has focus before using a controller.
+- If your physical pad layout differs, update button mapping constants in `index.html` (`GP_BTN_ACT`, `GP_BTN_GRD`, `GP_BTN_ALT`, `GP_BTN_NEXT`) and deadzone (`GP_DEADZONE`).
